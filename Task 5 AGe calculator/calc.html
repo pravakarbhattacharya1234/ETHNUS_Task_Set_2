@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Age Calculator</title>
+  <link rel="stylesheet" type="text/css" href="calc.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Age Calculator</h1>
+    <div class="input-container">
+      <input id="birthday" type="text" placeholder="Enter your birthday (mm-dd-yyyy)" oninput="formatBirthDate()">
+
+      <i class="far fa-calendar-alt" onclick="showCalendar()"></i>
+    </div>
+    <div id="datepicker"></div>
+    <button onclick="calculateAge()">Calculate</button>
+    <p id="output"></p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="calc.js"></script>
+</body>
+</html>
