@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Records</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
+
+    <script>
+        
+        fetch('https://dummyjson.com/users')
+            .then(response => response.json())
+            .then(data => {
+                const userTableBody = document.getElementById('userTableBody');
+
+                
+                data.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.username}</td>
+                        <td>${user.website}</td>
+                    `;
+                    userTableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.log('Error fetching user records:', error);
+            });
+    </script>
+</body>
+</html>
